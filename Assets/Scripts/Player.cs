@@ -9,6 +9,7 @@ public class Player: MonoBehaviour
     Vector2 movement;                   // The vector to store the direction of the player's movement.
     Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
     List<GameObject> colliding;
+    GameObject closest;
 
     void Awake()
     {
@@ -25,26 +26,6 @@ public class Player: MonoBehaviour
 
         // Move the player around the scene.
         Move(h, v);
-
-        if (Input.GetAxis("Action") == 1)
-        {
-            float dist = 9999999;
-            GameObject closest = null;
-
-            foreach (GameObject go in colliding)
-            {
-                float temp = Vector3.Distance(go.transform.position, gameObject.transform.position);
-                Debug.Log(temp);
-                if (temp < dist)
-                {
-                    closest = go.transform.parent.gameObject;
-                    dist = temp;
-                }
-
-            }
-            Debug.Log("closest:");
-            Debug.Log(closest);
-        }
     }
 
     void Move(float h, float v)
@@ -71,10 +52,9 @@ public class Player: MonoBehaviour
         collider.GetComponentInParent<InteractableEntity>().hideIcon();
     }
 
-    bool IsTheClosest (GameObject target)
+    void UpdateClosest ()
     {
         float dist = -1;
-        GameObject closest = null;
 
         foreach (GameObject go in colliding)
         {
@@ -85,20 +65,21 @@ public class Player: MonoBehaviour
                 dist = temp;
             }
         }
-        return (closest == target);
     }
 
     private void Update()
     {
-        if (colliding.Count > 0)
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        else
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        UpdateClosest();
 
+        if (colliding.Count > 0)
+        {
+            if (Input.GetAxis("Action") == 1)
+                closest.GetComponent<InteractableEntity>().Interact();
+        }
 
         foreach (GameObject go in colliding)
         {
-            if (IsTheClosest(go.transform.parent.gameObject))
+            if (go.transform.parent.gameObject == closest)
                 go.GetComponentInParent<InteractableEntity>().showIcon();
             else
                 go.GetComponentInParent<InteractableEntity>().hideIcon();

@@ -38,7 +38,9 @@ public class InteractableEntity : MonoBehaviour {
         icon = null;
     }
 
-    void Update () {
-		
-	}
+    public virtual void Interact ()
+    {
+        Debug.Log("Interact");
+    }
+
 }
