@@ -42,14 +42,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: BG
-    uniqueID: 1655816803
+    uniqueID: 1956178853
     locked: 0
   - name: Enemies
-    uniqueID: 991975929
+    uniqueID: 1608079365
     locked: 0
   - name: Player
-    uniqueID: 2781894919
+    uniqueID: 1598069099
     locked: 0
   - name: UI
-    uniqueID: 2988903823
+    uniqueID: 312434297
+    locked: 0
+  - name: Test layer
+    uniqueID: 1388933129
     locked: 0
