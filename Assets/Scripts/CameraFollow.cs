@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         offset = transform.position - target.position;
+        offset.y = 3.5f;
     }
 
     void FixedUpdate()
