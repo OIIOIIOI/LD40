@@ -53,6 +53,3 @@ TagManager:
   - name: UI
     uniqueID: 312434297
     locked: 0
-  - name: Test layer
-    uniqueID: 1388933129
-    locked: 0
