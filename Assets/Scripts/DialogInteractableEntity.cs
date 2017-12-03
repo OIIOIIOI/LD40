@@ -48,9 +48,14 @@ public class DialogInteractableEntity : InteractableEntity
         return dialogs[currentDialog].lines[currentLine];
     }
 
-    public string GetCurrentLine ()
+    public string GetCurrentLine()
     {
         return dialogs[currentDialog].lines[currentLine];
+    }
+
+    public bool IsLastLine()
+    {
+        return currentLine == dialogs[currentDialog].lines.Length - 1;
     }
 
     public override void Interact()
