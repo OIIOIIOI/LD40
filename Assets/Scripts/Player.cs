@@ -4,9 +4,13 @@ using System.Collections.Generic;
 
 public class Player: MonoBehaviour
 {
-    public float speed = 6f;
-    bool isFacingRight;
 
+    public float speed = 6f;
+    public bool hasItemScarf = false;
+    public bool hasItemBattery = false;
+    public bool hasItemKnife = false;
+
+    bool isFacingRight;
     Vector2 movement;                   // The vector to store the direction of the player's movement.
     Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
     List<GameObject> colliding;
@@ -117,9 +121,19 @@ public class Player: MonoBehaviour
         }
     }
 
-    public bool HasItem()
+    public bool HasItem (string name)
     {
-        return true;
+        switch (name)
+        {
+            case "scarf":
+                return hasItemScarf;
+            case "battery":
+                return hasItemBattery;
+            case "knife":
+                return hasItemKnife;
+            default:
+                return false;
+        }
     }
 
     void Flip()

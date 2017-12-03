@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableEntity : MonoBehaviour {
+public class InteractableEntity : MonoBehaviour
+{
 
     public int radius;
     public GameObject iconPrefab;
+    public bool givesObject = false;
+    public string objectName;
+
     GameObject[] gremlinsColliders;
     GameObject icon;
     GameObject player;
@@ -50,7 +54,7 @@ public class InteractableEntity : MonoBehaviour {
 
     public virtual void Interact ()
     {
-        if(player.GetComponent<Player>().HasItem())
+        if(player.GetComponent<Player>().HasItem("battery"))
         {
             foreach (GameObject gremlinsCollider in gremlinsColliders)
             {
