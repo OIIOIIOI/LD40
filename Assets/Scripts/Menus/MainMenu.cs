@@ -16,8 +16,14 @@ public class MainMenu : MonoBehaviour {
             buttonStartText.text = "Continue";
         }
 	}
-	
-	public void LoadGame()
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void LoadGame()
     {
         SceneManager.LoadScene(2); // Replace by current scene or next 
     }
@@ -31,7 +37,4 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("credits");
     }
-
-
-
 }
