@@ -124,15 +124,11 @@ public class Player: MonoBehaviour
     void Flip()
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
-        {
             player.GetComponent<SpriteRenderer>().flipX = true;
 
-        }
 
         if (Input.GetAxisRaw("Horizontal") < 0)
-        {
             player.GetComponent<SpriteRenderer>().flipX = false;
-        }
     }
 
 }
