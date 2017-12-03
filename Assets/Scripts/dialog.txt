@@ -1,61 +1,57 @@
 // introduction
 In a far away future, while on a diplomatic journey, the  Colossium is in trouble.
-After a reactor deficiency, the Earth's admiral vessel has crash-landed on XXXXX with Princess Beach onboard. ///////////!!!!!!!!!!!!!!!!
+After a reactor deficiency, the Earth's admiral vessel has crash-landed on Greron 80085 with Princess Beach onboard. ///////////!!!!!!!!!!!!!!!!
 From this remote part of the galaxy, the Colossium's SOS is intercepted by a rogue pilot, experienced in deliveries in hostile territory...
 
 //Action: look under the rock
 Nothing appears under the rock.
 You have found the scarf.
 
-<<<<<<< HEAD
-
 //PNJ 1.1 (run 1)
-=======
-//PNJ 1.1
->>>>>>> 6ba86637e131a5aa98b8db9389f7ee2fef99c945
-Hi Friend !
-I lost my scarf somewhere.
-Take a look under rocks
-May be you will find it.
-I know the starship crash location.
-Bring me back my scarf and I will give you this information.
-But be fast!
+Hi friend!
+Yes I saw that crashed ship!
+I can guide you but I need help myself.
+I lost my scarf the other day.
+I think it was next to some rocks...
+Maybe you can give me a hand and find it?
+Thanks, be quick!
 
 //PNJ 1.2 (run 2)
-Thank you, you find it !
-Tis is a precious scarf.
+Thank you, you found it!
+This is a precious scarf.
 I have another request if you don't mind.
-After that, swear to tell you where is the starship.
-Gnouposes are ruining our harvest.
+After that, I swear I'll tell you where the starship is.
+Wild Gnoupos are hiding in our fields.
 Could you please make them run away?
 
 
 //PNJ 1.3 (run 3)
-Thank you, you find it !
+Thank you, you found it!
 Tis is a precious scarf.
 I have another request if you don't mind.
-After that, swear to tell you where is the starship.
-Gnouposes are ruining our harvest.
+After that, I swear I'll tell you where the starship is.
+Wild Gnoupos are hiding in our fields.
 Could you please make them run away?
 Oh! I've almost forgotten to give you the battery.
 Without you can't do it.
 
+
 //PNJ 1.4 After success hunting (run 3)
 Thank you!
-The starship is belong that bridge.
+The starship is further away to the north-east.
 
 //PNJ 2.1 (run 4)
-Hi !
-I am in late for an important meeting.
-I let my ritual knive at home.
-Could you please bring it me back?
+Hi!
+I am late for an important meeting.
+But I left my ritual knive at home.
+Could you please bring it back to me?
 I know you are looking for a space ship...
-And I know his exact location.
+And I know its exact location.
 
 //PNJ 2.2. (run 5)
 Thanks stranger!
-This will be very usefull.
-Go to see my 3 friends and say to them that is gonna be happen now.
+This will be very useful.
+Go see my 3 friends and tell them it is gonna happen now.
 One of them will tell you where to find what you are looking for.
 
     //friend 1
@@ -65,39 +61,39 @@ One of them will tell you where to find what you are looking for.
     I have been waiting for too long...
 
     //friend 3
-    Good. I gonna prepare myself right know.
-    Ho, stranger, the ship is to the east.
+    Good. I'm going to get ready right now.
+    Ho! Stranger, the ship is to the east.
 
     //Ship dialog (run 6 & 7)
     Welcome brothers! 
-    This is the moment to honnnor our creator!
-    We will offer him this impure princess Beach!
-    Wait, who is this! the pilot!!! 
-    Don't let him go back home!
+    This is the moment to honor our Creator!
+    We will offer this impure princess to Him!
+    Wait, who's this! The pilot!!!
+    Don't let him escape!
     
 //PNJ village GL variation
     //GL2
         //villager1
-            What is doing a stranger here ?
+            What is a stranger doing here?
         //villager2
-            A spaceship falls down the stars today.
+            A spaceship fell from the skies earlier.
         //villager3
-            Where does come from this Pilot.+
+            Where does this pilot come from?
 
 //PNJ village GL variation
     //GL3
         //villager1
-            We offer us a really interresting gift.
+            Destiny was nice to us with this gift from the skies.
         //villager2
-            We must prepare ourself for the ceremony.
+            We must prepare ourselves for the ceremony.
         //villager3
             Can't wait anymore...
 
 //PNJ village GL variation
     //GL2
         //villager1
-            There will be be blood !
+            There will be be blood!
         //villager2
-            Glory to our creator !
+            Glory to our Creator!
         //villager3
-            The pilot shoudn't go back!
+            You shouldn't be there.
