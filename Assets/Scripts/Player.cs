@@ -46,19 +46,20 @@ public class Player: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.transform.parent + " enter");
         if (other.gameObject.tag == "detectedZone") 
         {
             if (hasItem())
             {
                 foreach (GameObject gremlinsCollider in gremlinsColliders)
                 {
-                    gremlinsCollider.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
+                    gremlinsCollider.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
                 }
             }
             else
             {
-                other.gameObject.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
+                //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", true);
+                //other.gameObject.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
             }
         }
         else
@@ -71,11 +72,13 @@ public class Player: MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log(other.gameObject.transform.parent+" exit");
+        Debug.Log("exit");
         if (other.gameObject.tag == "detectedZone")
         {
             if (!hasItem())
-                other.gameObject.transform.parent.localScale += new Vector3(0, 3f / 2, 0);
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", false);
+            //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", false);
+
 
         }
         else
@@ -123,7 +126,7 @@ public class Player: MonoBehaviour
 
     bool hasItem()
     {
-        return true;
+        return false;
     }
 
 }

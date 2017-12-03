@@ -17,7 +17,7 @@ public class TimeOutTransition : MonoBehaviour {
 
     public void LoadGame()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene(2); // Replace by current scene or next 
     }
 
     public void QuitToMenu()

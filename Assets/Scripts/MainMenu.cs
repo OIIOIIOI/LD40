@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour {
 	
 	public void LoadGame()
     {
-        SceneManager.LoadScene(myCurrentScene);
+        SceneManager.LoadScene(2); // Replace by current scene or next 
     }
 
     public void QuitGame()
