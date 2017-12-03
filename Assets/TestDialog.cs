@@ -9,17 +9,21 @@ public class TestDialog : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         dial = gameObject.GetComponent<DialogInteractableEntity>();
-        Debug.Log(dial.GetCurrentLine());
-        Debug.Log(dial.NextLine());
-        Debug.Log(dial.NextLine());
+        dial.Interact();
+        dial.Interact();
+        dial.Interact();
 
-        dial.NextDialog();
-        Debug.Log(dial.GetCurrentLine());
-        Debug.Log(dial.NextLine());
-        Debug.Log(dial.NextLine());
-        Debug.Log(dial.NextLine());
-        Debug.Log(dial.NextLine());
-        Debug.Log(dial.NextLine());
+        //Debug.Log(dial.GetCurrentLine());
+        //Debug.Log(dial.NextLine());
+        //Debug.Log(dial.NextLine());
+
+        //dial.NextDialog();
+        //Debug.Log(dial.GetCurrentLine());
+        //Debug.Log(dial.NextLine());
+        //Debug.Log(dial.NextLine());
+        //Debug.Log(dial.NextLine());
+        //Debug.Log(dial.NextLine());
+        //Debug.Log(dial.NextLine());
     }
 	
 	// Update is called once per frame

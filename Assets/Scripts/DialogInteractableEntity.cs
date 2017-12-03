@@ -6,15 +6,15 @@ public class DialogInteractableEntity : InteractableEntity
 {
     
     public Dialog[] dialogs;
-
+    
     int currentDialog;
     int currentLine;
 
     void Awake()
     {
-        currentDialog = -1;
+        currentDialog = 0;
         currentLine = -1;
-        NextDialog();
+        //NextDialog();
     }
 
     public void NextDialog ()
@@ -41,6 +41,12 @@ public class DialogInteractableEntity : InteractableEntity
     public string GetCurrentLine ()
     {
         return dialogs[currentDialog].lines[currentLine];
+    }
+
+    public override void Interact()
+    {
+        Debug.Log(NextLine());
+        // TODO call dialog display
     }
 
 }
