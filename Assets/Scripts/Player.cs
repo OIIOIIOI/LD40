@@ -21,7 +21,6 @@ public class Player: MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
         //PlayerPrefs.SetString("nextRun", "nextRun");
-        Debug.Log(PlayerPrefs.GetString("nextRun"));
     }
 
     private void Start()
@@ -125,15 +124,11 @@ public class Player: MonoBehaviour
     void Flip()
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
-        {
             player.GetComponent<SpriteRenderer>().flipX = true;
 
-        }
 
         if (Input.GetAxisRaw("Horizontal") < 0)
-        {
             player.GetComponent<SpriteRenderer>().flipX = false;
-        }
     }
 
 }
