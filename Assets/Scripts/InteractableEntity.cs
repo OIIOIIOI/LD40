@@ -6,7 +6,9 @@ public class InteractableEntity : MonoBehaviour {
 
     public int radius;
     public GameObject iconPrefab;
+    GameObject[] gremlinsColliders;
     GameObject icon;
+    GameObject player;
 
     GameObject interactiveArea;
     
@@ -14,11 +16,19 @@ public class InteractableEntity : MonoBehaviour {
         interactiveArea = new GameObject("InteractiveArea");
         interactiveArea.transform.SetParent(gameObject.transform, false);
 
+        player = GameObject.FindGameObjectWithTag("Player");
+
         CircleCollider2D collider = interactiveArea.AddComponent<CircleCollider2D>();
         collider.radius = radius / 10f;
         collider.offset = new Vector2();
         collider.isTrigger = true;
     }
+
+    private void Start()
+    {
+        gremlinsColliders = GameObject.FindGameObjectsWithTag("detectedZone");
+    }
+
 
     public void showIcon()
     {
@@ -40,7 +50,13 @@ public class InteractableEntity : MonoBehaviour {
 
     public virtual void Interact ()
     {
-        Debug.Log("Interact");
+        if(player.GetComponent<Player>().hasItem())
+        {
+            foreach (GameObject gremlinsCollider in gremlinsColliders)
+            {
+                gremlinsCollider.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
+            }
+        }    
     }
 
 }
