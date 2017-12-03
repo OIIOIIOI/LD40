@@ -44,10 +44,10 @@ public class Player: MonoBehaviour
     void Move(float h, float v)
     {
         movement.Set(h, v);
-        
         movement = movement.normalized * speed * Time.deltaTime;
         
         playerRigidbody.MovePosition(playerRigidbody.position + movement);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
