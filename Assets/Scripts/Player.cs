@@ -67,7 +67,6 @@ public class Player: MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("exit");
         if (other.gameObject.tag == "detectedZone")
         {
             other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", false);
@@ -103,8 +102,10 @@ public class Player: MonoBehaviour
 
         if (colliding.Count > 0)
         {
-            if (Input.GetAxis("Action") == 1)
+            if (Input.GetKeyUp("space"))
+            {
                 closest.GetComponent<InteractableEntity>().Interact();
+            }
         }
 
         foreach (GameObject go in colliding)

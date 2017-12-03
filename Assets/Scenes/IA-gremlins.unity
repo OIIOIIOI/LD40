@@ -480,6 +480,14 @@ MonoBehaviour:
   - lines:
     - CC ca va ?
     - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
+    - trql frr
   - lines:
     - ouais ouais
     - tchuss
@@ -1553,7 +1561,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: sdfssfs
+  m_Text: Text
 --- !u!222 &1474912619
 CanvasRenderer:
   m_ObjectHideFlags: 0
