@@ -11,10 +11,17 @@ public class Player: MonoBehaviour
     List<GameObject> colliding;
     GameObject closest;
 
+    GameObject[] gremlinsColliders;
+
     void Awake()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
+    }
+
+    private void Start()
+    {
+        gremlinsColliders = GameObject.FindGameObjectsWithTag("detectedZone");
     }
 
 
@@ -37,19 +44,47 @@ public class Player: MonoBehaviour
         playerRigidbody.MovePosition(playerRigidbody.position + movement);
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        while (colliding.Contains(collider.gameObject))
-            colliding.Remove(collider.gameObject);
-        colliding.Add(collider.gameObject);
+        Debug.Log(other.gameObject.transform.parent + " enter");
+        if (other.gameObject.tag == "detectedZone") 
+        {
+            if (hasItem())
+            {
+                foreach (GameObject gremlinsCollider in gremlinsColliders)
+                {
+                    gremlinsCollider.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
+                }
+            }
+            else
+            {
+                other.gameObject.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
+            }
+        }
+        else
+        {
+            while (colliding.Contains(other.gameObject))
+                colliding.Remove(other.gameObject);
+            colliding.Add(other.gameObject);
+        }  
     }
 
-    private void OnTriggerExit2D(Collider2D collider)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        while (colliding.Contains(collider.gameObject))
-            colliding.Remove(collider.gameObject);
+        Debug.Log(other.gameObject.transform.parent+" exit");
+        if (other.gameObject.tag == "detectedZone")
+        {
+            if (!hasItem())
+                other.gameObject.transform.parent.localScale += new Vector3(0, 3f / 2, 0);
 
-        collider.GetComponentInParent<InteractableEntity>().hideIcon();
+        }
+        else
+        {
+            while (colliding.Contains(other.gameObject))
+                colliding.Remove(other.gameObject);
+
+            other.GetComponentInParent<InteractableEntity>().hideIcon();
+        }     
     }
 
     void UpdateClosest ()
@@ -84,6 +119,11 @@ public class Player: MonoBehaviour
             else
                 go.GetComponentInParent<InteractableEntity>().hideIcon();
         }
+    }
+
+    bool hasItem()
+    {
+        return true;
     }
 
 }
