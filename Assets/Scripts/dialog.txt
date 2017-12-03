@@ -1,14 +1,18 @@
 // introduction
-In a far away futur, while a diplomatic journey, the  Colossium is under troubles.
-After a reactor deficient, The Earth's admiral vessel has been crashed on XXXXX with the Beach princess onboard. ///////////!!!!!!!!!!!!!!!!
-Localized in a remote part of the galaxy, the Colossium SOS is intercepted by a experienced pilot, experienced in delivery in hostil territory.
+In a far away future, while on a diplomatic journey, the  Colossium is in trouble.
+After a reactor deficiency, the Earth's admiral vessel has crash-landed on XXXXX with Princess Beach onboard. ///////////!!!!!!!!!!!!!!!!
+From this remote part of the galaxy, the Colossium's SOS is intercepted by a rogue pilot, experienced in deliveries in hostile territory...
 
 //Action: look under the rock
 Nothing appears under the rock.
 You have found the scarf.
 
+<<<<<<< HEAD
 
 //PNJ 1.1 (run 1)
+=======
+//PNJ 1.1
+>>>>>>> 6ba86637e131a5aa98b8db9389f7ee2fef99c945
 Hi Friend !
 I lost my scarf somewhere.
 Take a look under rocks

@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7712aef2caba900499d9b2c19ed425ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 5
+  time: 10
   clock: {fileID: 875224032}
 --- !u!114 &1712067611
 MonoBehaviour:
