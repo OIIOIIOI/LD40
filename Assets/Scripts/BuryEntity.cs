@@ -7,7 +7,6 @@ public class BuryEntity : MonoBehaviour {
     public int radius;
     public GameObject player;
 
-
     GameObject detectedArea;
 
     void Awake()
