@@ -46,19 +46,19 @@ public class Player: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
         if (other.gameObject.tag == "detectedZone") 
         {
             if (hasItem())
             {
                 foreach (GameObject gremlinsCollider in gremlinsColliders)
                 {
-                    gremlinsCollider.transform.parent.GetComponent<Animator>().SetBool("playerNearby", true);
+                    gremlinsCollider.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
                 }
             }
             else
             {
-                other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", true);
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
+                //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", true);
                 //other.gameObject.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
             }
         }
@@ -76,7 +76,9 @@ public class Player: MonoBehaviour
         if (other.gameObject.tag == "detectedZone")
         {
             if (!hasItem())
-                other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", false);
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", false);
+            //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", false);
+
 
         }
         else
