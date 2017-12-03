@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4334721624244548}
   - component: {fileID: 114407231096002404}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: ScarfRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0
   iconPrefab: {fileID: 0}
-  givesObject: 0
-  objectName: 
+  givesObject: 1
+  objectName: scarf
   dialogs:
   - lines:
-    - Nothing appears under the rock.
+    - You have found the scarf.
   canvasDialog: {fileID: 0}
