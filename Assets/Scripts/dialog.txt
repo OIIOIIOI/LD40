@@ -7,19 +7,14 @@ From this remote part of the galaxy, the Colossium's SOS is intercepted by a rog
 Nothing appears under the rock.
 You have found the scarf.
 
-<<<<<<< HEAD
-
 //PNJ 1.1 (run 1)
-=======
-//PNJ 1.1
->>>>>>> 6ba86637e131a5aa98b8db9389f7ee2fef99c945
-Hi Friend !
-I lost my scarf somewhere.
-Take a look under rocks
-May be you will find it.
-I know the starship crash location.
-Bring me back my scarf and I will give you this information.
-But be fast!
+Hi friend!
+I lost my scarf somewhere. // Yes I saw that crashed ship!
+Take a look under rocks // I can guide you but I need help myself.
+May be you will find it. // I lost my scarf the other day.
+I know the starship crash location. // I think it was next to some rock...
+Bring me back my scarf and I will give you this information. // Maybe you can give me a hand and find it?
+But be fast! // Thanks, be quick!
 
 //PNJ 1.2 (run 2)
 Thank you, you find it !

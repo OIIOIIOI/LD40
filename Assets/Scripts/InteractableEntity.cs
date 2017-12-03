@@ -12,7 +12,7 @@ public class InteractableEntity : MonoBehaviour {
 
     GameObject interactiveArea;
     
-    void Awake () {
+    protected void Awake () {
         interactiveArea = new GameObject("InteractiveArea");
         interactiveArea.transform.SetParent(gameObject.transform, false);
 
@@ -56,7 +56,7 @@ public class InteractableEntity : MonoBehaviour {
             {
                 gremlinsCollider.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
             }
-        }    
+        }
     }
 
 }

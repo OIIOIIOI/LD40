@@ -1789,6 +1789,29 @@ Transform:
   m_Father: {fileID: 1154825230}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1004721682 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1073665538477944, guid: 6c34bcb0e30569641bee29545a92fe61,
+    type: 2}
+  m_PrefabInternal: {fileID: 59375496}
+--- !u!114 &1004721683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004721682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38a6880df9e7f504898b1472f93a4173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10
+  iconPrefab: {fileID: 1267767262670330, guid: 82e23ca9f5cdb5c43a5808d0b1b6c957, type: 2}
+  dialogs:
+  - lines:
+    - AAAA
+    - BBBBB
+    - CCCCC
 --- !u!1001 &1006863505
 Prefab:
   m_ObjectHideFlags: 0
@@ -2580,6 +2603,7 @@ GameObject:
   - component: {fileID: 1798424290}
   - component: {fileID: 1798424289}
   - component: {fileID: 1798424293}
+  - component: {fileID: 1798424294}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2664,6 +2688,17 @@ MonoBehaviour:
   target: {fileID: 1137256041}
   lUnityPlaneSize: 10
   bgScrollSpeed: 0.1
+--- !u!114 &1798424294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798424288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da37f5e4e96c5f043807e48075ec4298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1809396654 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4405160133822678, guid: 82a17f3f9cc8b174bbc71b902dde3285,

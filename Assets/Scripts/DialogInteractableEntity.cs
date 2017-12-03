@@ -10,8 +10,10 @@ public class DialogInteractableEntity : InteractableEntity
     int currentDialog;
     int currentLine;
 
-    void Awake()
+    new void Awake()
     {
+        base.Awake();
+
         currentDialog = 0;
         currentLine = -1;
         //NextDialog();
