@@ -4,18 +4,24 @@ using System.Collections.Generic;
 
 public class Player: MonoBehaviour
 {
-    public float speed = 6f;            // The speed that the player will move at.
+    public float speed = 6f;
+    bool isFacingRight;
 
     Vector2 movement;                   // The vector to store the direction of the player's movement.
     Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
     List<GameObject> colliding;
     GameObject closest;
+    Transform player;
+
     GameObject[] gremlinsColliders;
 
     void Awake()
     {
+        player = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
+        //PlayerPrefs.SetString("nextRun", "nextRun");
+        Debug.Log(PlayerPrefs.GetString("nextRun"));
     }
 
     private void Start()
@@ -23,9 +29,10 @@ public class Player: MonoBehaviour
         gremlinsColliders = GameObject.FindGameObjectsWithTag("detectedZone");
     }
 
-
     void FixedUpdate()
     {
+        Flip();
+
         // Store the input axes.
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -110,9 +117,23 @@ public class Player: MonoBehaviour
         }
     }
 
-    public bool hasItem()
+    public bool HasItem()
     {
         return true;
+    }
+
+    void Flip()
+    {
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            player.GetComponent<SpriteRenderer>().flipX = true;
+
+        }
+
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            player.GetComponent<SpriteRenderer>().flipX = false;
+        }
     }
 
 }

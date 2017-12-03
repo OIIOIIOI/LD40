@@ -50,7 +50,7 @@ public class InteractableEntity : MonoBehaviour {
 
     public virtual void Interact ()
     {
-        if(player.GetComponent<Player>().hasItem())
+        if(player.GetComponent<Player>().HasItem())
         {
             foreach (GameObject gremlinsCollider in gremlinsColliders)
             {
