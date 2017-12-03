@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogInteractableEntity : InteractableEntity
 {
@@ -10,9 +11,19 @@ public class DialogInteractableEntity : InteractableEntity
     int currentDialog;
     int currentLine;
 
+    public Canvas canvasDialog;
+    
+    GameObject image;
+    GameObject text;
+
     new void Awake()
     {
         base.Awake();
+
+        image = canvasDialog.transform.Find("Image").gameObject;
+        text = image.transform.Find("Text").gameObject;
+
+        HideDialog();
 
         currentDialog = 0;
         currentLine = -1;
@@ -40,15 +51,35 @@ public class DialogInteractableEntity : InteractableEntity
         return dialogs[currentDialog].lines[currentLine];
     }
 
-    public string GetCurrentLine ()
+    public string GetCurrentLine()
     {
         return dialogs[currentDialog].lines[currentLine];
     }
 
+    public bool IsLastLine()
+    {
+        return currentLine == dialogs[currentDialog].lines.Length - 1;
+    }
+
     public override void Interact()
     {
-        Debug.Log(NextLine());
-        // TODO call dialog display
+        if (IsLastLine())
+            HideDialog();
+        else
+            DisplayDialog();
+    }
+
+    void DisplayDialog()
+    {
+        image.SetActive(true);
+        text.SetActive(true);
+        text.GetComponent<Text>().text = NextLine();
+    }
+
+    void HideDialog()
+    {
+        image.SetActive(false);
+        text.SetActive(false);
     }
 
 }
