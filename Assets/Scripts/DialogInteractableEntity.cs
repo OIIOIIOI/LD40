@@ -12,15 +12,18 @@ public class DialogInteractableEntity : InteractableEntity
     int currentLine;
 
     public Canvas canvasDialog;
-
-    Image image;
+    
+    GameObject image;
+    GameObject text;
 
     new void Awake()
     {
         base.Awake();
 
-        image = canvasDialog.transform.Find("Image").GetComponent<Image>();
-        image.enabled = false;
+        image = canvasDialog.transform.Find("Image").gameObject;
+        text = image.transform.Find("Text").gameObject;
+
+        HideDialog();
 
         currentDialog = 0;
         currentLine = -1;
@@ -60,18 +63,23 @@ public class DialogInteractableEntity : InteractableEntity
 
     public override void Interact()
     {
-        DisplayDialog();
+        if (IsLastLine())
+            HideDialog();
+        else
+            DisplayDialog();
     }
 
     void DisplayDialog()
     {
-        image.enabled = true;
-        image.transform.GetComponent<Text>().text = NextLine();
+        image.SetActive(true);
+        text.SetActive(true);
+        text.GetComponent<Text>().text = NextLine();
     }
 
     void HideDialog()
     {
-        image.enabled = false;
+        image.SetActive(false);
+        text.SetActive(false);
     }
 
 }
