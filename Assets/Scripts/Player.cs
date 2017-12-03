@@ -21,7 +21,6 @@ public class Player: MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
         //PlayerPrefs.SetString("nextRun", "nextRun");
-        Debug.Log(PlayerPrefs.GetString("nextRun"));
     }
 
     private void Start()
