@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4334721624244548}
   - component: {fileID: 114407231096002404}
   m_Layer: 0
-  m_Name: ScarfRock 1
   m_Name: KnifeRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,9 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0
   iconPrefab: {fileID: 0}
+  iconHeight: 0
   givesObject: 1
+  takesObject: 0
   objectName: knife
   dialogs:
   - lines:
     - You have found the knife.
-  canvasDialog: {fileID: 0}

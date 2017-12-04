@@ -43,6 +43,10 @@ public class Player: MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
+        GameObject dialogCanvas = GameObject.Find("DialogueCanvas");
+        if (dialogCanvas.transform.Find("Image").gameObject.activeInHierarchy)
+            return;
+
         // Move the player around the scene.
         Move(h, v);
     }
