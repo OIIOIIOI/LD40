@@ -7,4 +7,6 @@ public class RunSettings : MonoBehaviour {
     public int glauqueLevel = 1;
     public float glauqueRatio = 1f;
 
+    public AudioSource music_source;
+
 }
