@@ -39,7 +39,7 @@ public class DialogInteractableEntity : InteractableEntity
         currentDialog++;
 
         currentLine = -1;
-        NextLine();
+        //NextLine();
     }
 
     public string NextLine ()
@@ -67,7 +67,19 @@ public class DialogInteractableEntity : InteractableEntity
         base.Interact();
 
         if (IsLastLine())
+        {
             HideDialog();
+
+            if (dialogs[currentDialog].loop)
+            {
+                currentLine = -1;
+            }
+            else if (dialogs[currentDialog].chain)
+            {
+                NextDialog();
+            }
+            
+        }
         else
             DisplayDialog();
     }
@@ -90,5 +102,7 @@ public class DialogInteractableEntity : InteractableEntity
 [System.Serializable]
 public class Dialog
 {
+    public bool loop = false;
+    public bool chain = false;
     public string[] lines;
 }

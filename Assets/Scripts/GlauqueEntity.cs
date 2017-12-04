@@ -28,4 +28,12 @@ public class GlauqueEntity : MonoBehaviour
             transform.localScale = new Vector3(Random.Range(0.9f, 1.1f), Random.Range(0.8f, 1.1f), 1f);
         }
 	}
+
+    public void SetStep (int step)
+    {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.sprite = steps[step];
+    }
+
 }

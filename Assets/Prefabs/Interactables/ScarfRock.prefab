@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114407231096002404}
   m_Layer: 0
   m_Name: ScarfRock
-  m_TagString: Untagged
+  m_TagString: Decor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1701099172497314}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.55, y: -1.37, z: 0}
+  m_LocalPosition: {x: -27.37, y: 9.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,13 +54,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 12
   iconPrefab: {fileID: 1159078279254166, guid: 1e0db273e055aea4488717e11de4c285, type: 2}
-  iconHeight: 1.3
+  iconHeight: 1.8
   givesObject: 1
   takesObject: 0
   objectName: scarf
   dialogs:
-  - lines:
-    - You have found the scarf.
+  - loop: 0
+    lines:
+    - You have found the scarf!
 --- !u!212 &212528045505497412
 SpriteRenderer:
   m_ObjectHideFlags: 1

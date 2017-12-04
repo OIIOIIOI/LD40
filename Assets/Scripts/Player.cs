@@ -7,6 +7,7 @@ public class Player: MonoBehaviour
 
     public float speed = 6f;
     public float slowSpeedPanalty = 3f;
+    public DialogInteractableEntity scarfNPC;
 
     bool isFacingRight;
     float initialSpeed;
@@ -129,9 +130,10 @@ public class Player: MonoBehaviour
         {
             if (Input.GetKeyUp("space"))
             {
-                if (!canSkipDialog)
-                    return;
-                StartCoroutine(Wait());
+                closest.GetComponent<InteractableEntity>().Interact();
+                //if (!canSkipDialog)
+                //    return;
+                //StartCoroutine(Wait());
             }
         }
 
@@ -161,12 +163,11 @@ public class Player: MonoBehaviour
 
     public void AddItem(string name)
     {
-        Debug.Log("AddItem " + name);
-
         switch (name)
         {
             case "scarf":
                 hasItemScarf = true;
+                scarfNPC.NextDialog();
                 break;
             case "battery":
                 hasItemBattery = true;
@@ -181,8 +182,6 @@ public class Player: MonoBehaviour
 
     public void RemoveItem(string name)
     {
-        Debug.Log("RemoveItem " + name);
-
         switch (name)
         {
             case "scarf":

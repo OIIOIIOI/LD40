@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 212234561859101638}
   m_Layer: 0
   m_Name: Npc1
-  m_TagString: NPC
+  m_TagString: Decor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1749542881638792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.4, y: 19.74, z: 0}
+  m_LocalPosition: {x: 10.7, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     - 'Yes I saw that crashed ship! '
     - I can guide you but I need help myself.
     - I lost my scarf the other day.
-    - 'I think it was next to some rocks... '
+    - 'I think it was next to a glowing rock... '
     - Maybe you can give me a hand and find it?
     - 'Thanks, be quick! '
   - lines:
@@ -117,8 +117,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -751133389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300012, guid: 04a8c1066b4e6894d98f5e7955552ad4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

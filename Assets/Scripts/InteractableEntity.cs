@@ -11,6 +11,7 @@ public class InteractableEntity : MonoBehaviour
     public bool givesObject = false;
     public bool takesObject = false;
     public string objectName;
+    bool objectIsAvailable = true;
 
     GameObject[] gremlinsColliders;
     GameObject icon;
@@ -55,10 +56,11 @@ public class InteractableEntity : MonoBehaviour
 
     public virtual void Interact ()
     {
-        Debug.Log(player);
-
-        if (givesObject)
+        if (givesObject && objectIsAvailable)
+        {
             player.GetComponent<Player>().AddItem(objectName);
+            objectIsAvailable = false;
+        }
 
         if (takesObject)
             player.GetComponent<Player>().RemoveItem(objectName);
