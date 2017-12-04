@@ -67,7 +67,9 @@ public class DialogInteractableEntity : InteractableEntity
         if (IsLastLine())
             HideDialog();
         else
+        {
             DisplayDialog();
+        }
     }
 
     void DisplayDialog()
