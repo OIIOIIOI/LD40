@@ -64,12 +64,12 @@ public class DialogInteractableEntity : InteractableEntity
 
     public override void Interact()
     {
+        base.Interact();
+
         if (IsLastLine())
             HideDialog();
         else
-        {
             DisplayDialog();
-        }
     }
 
     void DisplayDialog()

@@ -9,43 +9,43 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1159078279254166}
+  m_RootGameObject: {fileID: 1807930337815060}
   m_IsPrefabParent: 1
---- !u!1 &1159078279254166
+--- !u!1 &1807930337815060
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4389352744570744}
-  - component: {fileID: 212061820312995100}
+  - component: {fileID: 4216421700978946}
+  - component: {fileID: 212571359857206894}
   m_Layer: 0
-  m_Name: ActionIcon
+  m_Name: Stones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4389352744570744
+--- !u!4 &4216421700978946
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1159078279254166}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.22, y: 8.99, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1807930337815060}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9696852, w: 0.24435772}
+  m_LocalPosition: {x: -10.07, y: 4.12, z: 0}
+  m_LocalScale: {x: 0.6000003, y: 0.6000003, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &212061820312995100
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -151.712}
+--- !u!212 &212571359857206894
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1159078279254166}
+  m_GameObject: {fileID: 1807930337815060}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,15 +71,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 312434297
-  m_SortingLayer: 6
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 761becc762b163f4197ed968f471896e, type: 3}
+  m_SortingLayerID: 1956178853
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: d8ff538bacc39914c892e576b138a0fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.42, y: 2.58}
+  m_Size: {x: 6.26, y: 3.61}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

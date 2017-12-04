@@ -15,7 +15,6 @@ public class InteractableEntity : MonoBehaviour
     GameObject[] gremlinsColliders;
     GameObject icon;
     GameObject player;
-
     GameObject interactiveArea;
     
     protected void Awake ()
@@ -23,7 +22,7 @@ public class InteractableEntity : MonoBehaviour
         interactiveArea = new GameObject("InteractiveArea");
         interactiveArea.transform.SetParent(gameObject.transform, false);
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Player");
 
         CircleCollider2D collider = interactiveArea.AddComponent<CircleCollider2D>();
         collider.radius = radius / 10f;
@@ -36,7 +35,7 @@ public class InteractableEntity : MonoBehaviour
         gremlinsColliders = GameObject.FindGameObjectsWithTag("detectedZone");
     }
 
-    public void showIcon()
+    public void ShowIcon()
     {
         if (icon != null)
             return;
@@ -45,7 +44,7 @@ public class InteractableEntity : MonoBehaviour
         icon.transform.SetParent(gameObject.transform, false);
     }
 
-    public void hideIcon ()
+    public void HideIcon ()
     {
         if (icon == null)
             return;
@@ -56,11 +55,13 @@ public class InteractableEntity : MonoBehaviour
 
     public virtual void Interact ()
     {
+        Debug.Log(player);
+
         if (givesObject)
-            player.GetComponent<Player>().addItem(objectName);
+            player.GetComponent<Player>().AddItem(objectName);
 
         if (takesObject)
-            player.GetComponent<Player>().removeItem(objectName);
+            player.GetComponent<Player>().RemoveItem(objectName);
 
         if (player.GetComponent<Player>().HasItem("battery"))
         {

@@ -42,10 +42,12 @@ public class CameraFollow : MonoBehaviour
     void Update()
     {
         Transform plane = transform.Find("Plane");
+        Transform grad = transform.Find("Grad");
         Camera lCamera = Camera.main;
         float lSizeY = lCamera.orthographicSize * 2f;
         float lSizeX = lSizeY * lCamera.aspect;
         plane.localScale = new Vector3(lSizeX / lUnityPlaneSize, 1, lSizeY / lUnityPlaneSize);
+        grad.localScale = new Vector3(lSizeX / lUnityPlaneSize, 1, lSizeY / lUnityPlaneSize);
     }
 
     void LateUpdate ()

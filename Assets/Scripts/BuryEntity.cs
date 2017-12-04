@@ -12,7 +12,7 @@ public class BuryEntity : MonoBehaviour {
     void Awake()
     {
 
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.Find("Player");
 
         detectedArea = new GameObject("detectedArea");
         detectedArea.transform.SetParent(gameObject.transform, false);

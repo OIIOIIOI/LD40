@@ -7,9 +7,6 @@ public class Player: MonoBehaviour
 
     public float speed = 6f;
     public float slowSpeedPanalty = 3f;
-    public bool hasItemScarf = false;
-    public bool hasItemBattery = false;
-    public bool hasItemKnife = false;
 
     bool isFacingRight;
     float initialSpeed;
@@ -19,6 +16,9 @@ public class Player: MonoBehaviour
     GameObject closest;
     Transform player;
     bool canSkipDialog = true;
+    bool hasItemScarf = false;
+    bool hasItemBattery = false;
+    bool hasItemKnife = false;
 
     GameObject[] gremlinsColliders;
 
@@ -100,7 +100,7 @@ public class Player: MonoBehaviour
                 while (colliding.Contains(other.gameObject))
                     colliding.Remove(other.gameObject);
 
-                other.GetComponentInParent<InteractableEntity>().hideIcon();
+                other.GetComponentInParent<InteractableEntity>().HideIcon();
             }
         }
           
@@ -138,9 +138,9 @@ public class Player: MonoBehaviour
         foreach (GameObject go in colliding)
         {
             if (go.transform.parent.gameObject == closest)
-                go.GetComponentInParent<InteractableEntity>().showIcon();
+                go.GetComponentInParent<InteractableEntity>().ShowIcon();
             else
-                go.GetComponentInParent<InteractableEntity>().hideIcon();
+                go.GetComponentInParent<InteractableEntity>().HideIcon();
         }
     }
 
@@ -159,8 +159,10 @@ public class Player: MonoBehaviour
         }
     }
 
-    public void addItem(string name)
+    public void AddItem(string name)
     {
+        Debug.Log("AddItem " + name);
+
         switch (name)
         {
             case "scarf":
@@ -177,8 +179,10 @@ public class Player: MonoBehaviour
         }
     }
 
-    public void removeItem(string name)
+    public void RemoveItem(string name)
     {
+        Debug.Log("RemoveItem " + name);
+
         switch (name)
         {
             case "scarf":
