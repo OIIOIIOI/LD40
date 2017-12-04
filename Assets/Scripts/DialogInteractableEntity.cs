@@ -11,7 +11,7 @@ public class DialogInteractableEntity : InteractableEntity
     int currentDialog;
     int currentLine;
 
-    public Canvas canvasDialog;
+    Canvas canvasDialog;
     
     GameObject image;
     GameObject text;
@@ -20,9 +20,10 @@ public class DialogInteractableEntity : InteractableEntity
     {
         base.Awake();
 
+        canvasDialog = GameObject.Find("DialogueCanvas").GetComponent<Canvas>();
         image = canvasDialog.transform.Find("Image").gameObject;
         text = image.transform.Find("Text").gameObject;
-
+        
         HideDialog();
 
         currentDialog = 0;

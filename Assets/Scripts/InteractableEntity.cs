@@ -7,7 +7,9 @@ public class InteractableEntity : MonoBehaviour
 
     public int radius;
     public GameObject iconPrefab;
+    public float iconHeight = 0f;
     public bool givesObject = false;
+    public bool takesObject = false;
     public string objectName;
 
     GameObject[] gremlinsColliders;
@@ -16,7 +18,8 @@ public class InteractableEntity : MonoBehaviour
 
     GameObject interactiveArea;
     
-    protected void Awake () {
+    protected void Awake ()
+    {
         interactiveArea = new GameObject("InteractiveArea");
         interactiveArea.transform.SetParent(gameObject.transform, false);
 
@@ -33,13 +36,12 @@ public class InteractableEntity : MonoBehaviour
         gremlinsColliders = GameObject.FindGameObjectsWithTag("detectedZone");
     }
 
-
     public void showIcon()
     {
         if (icon != null)
             return;
 
-        icon = Instantiate(iconPrefab, Vector3.zero, Quaternion.identity) as GameObject;
+        icon = Instantiate(iconPrefab, new Vector3(0f, iconHeight, 0f), Quaternion.identity) as GameObject;
         icon.transform.SetParent(gameObject.transform, false);
     }
 
@@ -54,6 +56,9 @@ public class InteractableEntity : MonoBehaviour
 
     public virtual void Interact ()
     {
+        //if (givesObject)
+            
+
         if(player.GetComponent<Player>().HasItem("battery"))
         {
             foreach (GameObject gremlinsCollider in gremlinsColliders)

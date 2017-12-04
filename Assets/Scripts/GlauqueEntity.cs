@@ -12,7 +12,7 @@ public class GlauqueEntity : MonoBehaviour
 		if (steps.Length > 1)
         {
             RunSettings settings = GameObject.Find("Scripts").GetComponent<RunSettings>();
-            int step = 1;
+            int step = 0;
 
             if (settings.glauqueLevel > 0)
             {
@@ -24,7 +24,7 @@ public class GlauqueEntity : MonoBehaviour
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             if (sr != null)
                 sr.sprite = steps[step];
-            sr.flipX = Random.value > 0.5f;
+            //sr.flipX = Random.value > 0.5f;
             transform.localScale = new Vector3(Random.Range(0.9f, 1.1f), Random.Range(0.8f, 1.1f), 1f);
         }
 	}

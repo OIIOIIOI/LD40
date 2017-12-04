@@ -152,6 +152,42 @@ public class Player: MonoBehaviour
         }
     }
 
+    public void addItem(string name)
+    {
+        switch (name)
+        {
+            case "scarf":
+                hasItemScarf = true;
+                break;
+            case "battery":
+                hasItemBattery = true;
+                break;
+            case "knife":
+                hasItemKnife = true;
+                break;
+            default:
+                return;
+        }
+    }
+
+    public void removeItem(string name)
+    {
+        switch (name)
+        {
+            case "scarf":
+                hasItemScarf = false;
+                break;
+            case "battery":
+                hasItemBattery = false;
+                break;
+            case "knife":
+                hasItemKnife = false;
+                break;
+            default:
+                return;
+        }
+    }
+
     void Flip()
     {
         if (Input.GetAxisRaw("Horizontal") > 0)
