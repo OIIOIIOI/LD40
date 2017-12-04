@@ -42,20 +42,51 @@ public class MainMenu : MonoBehaviour {
             buttonStart.spriteState = spriteState1;
            
         }
-        if (Input.GetKey("up"))
-            Debug.Log("up arrow key is held down");
-        if (Input.GetKey("down"))
-            Debug.Log("up arrow key is held down");
-        if(Input.GetKey("up"))
-            Debug.Log("up arrow key is held down");
+        if (Input.GetButtonDown("Vertical"))
+                menusound();
         if (Input.GetMouseButtonDown(0))
-            Debug.Log("Pressed left click.");
+            menusound();
 
         if (Input.GetMouseButtonDown(1))
-            Debug.Log("Pressed right click.");
+            menusound();
 
         if (Input.GetMouseButtonDown(2))
-            Debug.Log("Pressed middle click.");
+            menusound();
+
+    }
+
+    void menusound()
+    {
+        int note = Random.Range(1, 7);
+            switch(note)
+        {
+            case 1:
+                menu1.Play();
+                break;
+            case 2:
+                menu2.Play();
+                break;
+            case 3:
+                menu3.Play();
+                break;
+            case 4:
+                menu4.Play();
+                break;
+            case 5:
+                menu5.Play();
+                break;
+            case 6:
+                menu6.Play();
+                break;
+            case 7:
+                menu7.Play();
+                break;
+                
+        }
+        
+
+
+
 
     }
 
