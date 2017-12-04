@@ -6,11 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/main-menu.unity
-    guid: b82623c905328ed45b7107d3bacdd49b
-  - enabled: 1
-    path: Assets/Scenes/timeOutTransition.unity
-    guid: 72d612fd79b448245a236a039cc28688
-  - enabled: 1
-    path: Assets/Scenes/IA-gremlins.unity
-    guid: ad38d88e30b72ed4a9add29ba20e266d
+    path: Assets/Scenes/Runs/DefaultRunScene.unity
+    guid: abe190af6daeb8144b2094cc476c1ad4

@@ -18,6 +18,7 @@ public class Player: MonoBehaviour
     List<GameObject> colliding;
     GameObject closest;
     Transform player;
+    bool canSkipDialog = true;
 
     GameObject[] gremlinsColliders;
 
@@ -128,7 +129,8 @@ public class Player: MonoBehaviour
         {
             if (Input.GetKeyUp("space"))
             {
-                closest.GetComponent<InteractableEntity>().Interact();
+                if (!canSkipDialog)
+                    return;
                 StartCoroutine(Wait());
             }
         }
@@ -215,7 +217,12 @@ public class Player: MonoBehaviour
 
     IEnumerator Wait()
     {
+        closest.GetComponent<InteractableEntity>().Interact();
+        canSkipDialog = false;
+
         yield return new WaitForSeconds(1);
+
+        canSkipDialog = true;
     }
 
 }
