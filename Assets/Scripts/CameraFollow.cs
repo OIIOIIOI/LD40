@@ -7,8 +7,7 @@ public class CameraFollow : MonoBehaviour
     //public float smoothing = 5f;
     public float lUnityPlaneSize = 10.0f;
     public float bgScrollSpeed = 0.1f;
-
-
+    
     Vector3 offset;
 
     void Start()
@@ -48,4 +47,14 @@ public class CameraFollow : MonoBehaviour
         float lSizeX = lSizeY * lCamera.aspect;
         plane.localScale = new Vector3(lSizeX / lUnityPlaneSize, 1, lSizeY / lUnityPlaneSize);
     }
+
+    void LateUpdate ()
+    {
+        GameObject[] entities = GameObject.FindGameObjectsWithTag("Decor");
+        foreach (GameObject ent in entities)
+        {
+            ent.GetComponent<SpriteRenderer>().sortingOrder = -Mathf.RoundToInt(ent.transform.position.y);
+        }
+    }
+
 }
