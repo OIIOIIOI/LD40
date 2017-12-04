@@ -6,21 +6,31 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
     //declare button type
-    public Text buttonStartText;
+    public Sprite ImgContinue;
+    public Sprite ImgContinueSelect;
     public string myCurrentScene;
+    public Button buttonStart;
+    public Button buttonContinue;
 
-	// Use this for initialization
-	void Start () {
-	    if (myCurrentScene != "start")
+   // SpriteState spriteState1 = new SpriteState();
+
+    // Use this for initialization
+    void Start () {
+        if (myCurrentScene != "start")
         {
-            buttonStartText.text = "Continue";
+            buttonStart.image.sprite = ImgContinue;
         }
-	}
+    }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (myCurrentScene != "start")
+        {
+            SpriteState spriteState1 = buttonStart.spriteState;
+            spriteState1.highlightedSprite = ImgContinueSelect;
+            buttonStart.spriteState = spriteState1;
+        }
     }
 
     public void LoadGame()
@@ -38,3 +48,14 @@ public class MainMenu : MonoBehaviour {
         SceneManager.LoadScene("credits");
     }
 }
+
+
+//// Use this for initialization
+//void Start()
+//{
+//    if (myCurrentScene != "start")
+//    {
+//        buttonStart.image.sprite = ImgContinue;
+//    }
+
+//}
