@@ -129,6 +129,7 @@ public class Player: MonoBehaviour
             if (Input.GetKeyUp("space"))
             {
                 closest.GetComponent<InteractableEntity>().Interact();
+                StartCoroutine(Wait());
             }
         }
 
@@ -210,6 +211,11 @@ public class Player: MonoBehaviour
     void IntialSpeed()
     {
         speed = initialSpeed;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
     }
 
 }
