@@ -1,8 +1,10 @@
 fileFormatVersion: 2
 guid: 0f499ca95f4d6464ba8a70dae6dae9d3
-timeCreated: 1512320064
+timeCreated: 1512390581
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spritesheet_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -84,7 +86,21 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 879
+        width: 228
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
