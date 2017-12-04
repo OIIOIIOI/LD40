@@ -6,11 +6,13 @@ public class Player: MonoBehaviour
 {
 
     public float speed = 6f;
+    public float slowSpeedPanalty = 3f;
     public bool hasItemScarf = false;
     public bool hasItemBattery = false;
     public bool hasItemKnife = false;
 
     bool isFacingRight;
+    float initialSpeed;
     Vector2 movement;                   // The vector to store the direction of the player's movement.
     Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
     List<GameObject> colliding;
@@ -24,6 +26,7 @@ public class Player: MonoBehaviour
         player = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
+        initialSpeed = speed;
         //PlayerPrefs.SetString("nextRun", "nextRun");
     }
 
@@ -55,34 +58,47 @@ public class Player: MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "detectedZone") 
+        if(other.gameObject.tag == "enemy")
         {
-            other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
-            //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", true);
-            //other.gameObject.transform.parent.localScale -= new Vector3(0, 3f / 2f, 0);
+            SlowSpeed();
         }
         else
         {
-            while (colliding.Contains(other.gameObject))
-                colliding.Remove(other.gameObject);
-            colliding.Add(other.gameObject);
-        }  
+            if (other.gameObject.tag == "detectedZone")
+            {
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
+            }
+            else
+            {
+                while (colliding.Contains(other.gameObject))
+                    colliding.Remove(other.gameObject);
+                colliding.Add(other.gameObject);
+            }
+        }
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "detectedZone")
+        if (other.gameObject.tag == "enemy")
         {
-            other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", false);
-            //other.gameObject.transform.parent.GetComponent<Animator>().SetBool("playerNearby", false);
+            IntialSpeed();
         }
         else
         {
-            while (colliding.Contains(other.gameObject))
-                colliding.Remove(other.gameObject);
+            if (other.gameObject.tag == "detectedZone")
+            {
+                other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", false);
+            }
+            else
+            {
+                while (colliding.Contains(other.gameObject))
+                    colliding.Remove(other.gameObject);
 
-            other.GetComponentInParent<InteractableEntity>().hideIcon();
-        }     
+                other.GetComponentInParent<InteractableEntity>().hideIcon();
+            }
+        }
+          
     }
 
     void UpdateClosest ()
@@ -109,6 +125,7 @@ public class Player: MonoBehaviour
             if (Input.GetKeyUp("space"))
             {
                 closest.GetComponent<InteractableEntity>().Interact();
+                StartCoroutine(Wait());
             }
         }
 
@@ -180,6 +197,21 @@ public class Player: MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") < 0)
             player.GetComponent<SpriteRenderer>().flipX = false;
+    }
+
+    void SlowSpeed()
+    {
+        speed = slowSpeedPanalty;
+    }
+
+    void IntialSpeed()
+    {
+        speed = initialSpeed;
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
     }
 
 }
