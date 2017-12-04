@@ -56,10 +56,13 @@ public class InteractableEntity : MonoBehaviour
 
     public virtual void Interact ()
     {
-        //if (givesObject)
-            
+        if (givesObject)
+            player.GetComponent<Player>().addItem(objectName);
 
-        if(player.GetComponent<Player>().HasItem("battery"))
+        if (takesObject)
+            player.GetComponent<Player>().removeItem(objectName);
+
+        if (player.GetComponent<Player>().HasItem("battery"))
         {
             foreach (GameObject gremlinsCollider in gremlinsColliders)
             {
