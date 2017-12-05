@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751295223598886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.7, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,8 +89,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e2bebd5a2d537446aa616fb44925599, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_PlayOnAwake: 0
+  m_Volume: 0.02
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   slowSpeedPanalty: 3
+  scarfNPC: {fileID: 0}
+  gnoupo: {fileID: 0}
 --- !u!212 &212233339036290498
 SpriteRenderer:
   m_ObjectHideFlags: 1

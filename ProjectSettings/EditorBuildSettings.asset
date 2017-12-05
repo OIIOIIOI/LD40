@@ -12,9 +12,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: a72b5504f34320647b8dd1863985b9c0
   - enabled: 1
-    path: Assets/Scenes/timeOutTransition.unity
-    guid: 72d612fd79b448245a236a039cc28688
-  - enabled: 1
-    path: Assets/Scenes/IA-gremlins.unity
-    guid: ad38d88e30b72ed4a9add29ba20e266d
-    
+    path: Assets/Scenes/Runs/FailScene.unity
+    guid: eee774056371e4f43a7f4a4739c3fb4e

@@ -102,7 +102,7 @@ public class MainMenu : MonoBehaviour {
 
     public void GoToCredits()
     {
-        SceneManager.LoadScene("credits");
+        SceneManager.LoadScene(1);
     }
 }
 

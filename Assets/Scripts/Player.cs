@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Player: MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player: MonoBehaviour
     public float speed = 6f;
     public float slowSpeedPanalty = 3f;
     public DialogInteractableEntity scarfNPC;
+    public BuryEntity gnoupo;
 
     bool isFacingRight;
     float initialSpeed;
@@ -20,7 +22,7 @@ public class Player: MonoBehaviour
     bool hasItemScarf = false;
     bool hasItemBattery = false;
     bool hasItemKnife = false;
-
+    AudioSource source;
     GameObject[] gremlinsColliders;
 
     void Awake()
@@ -29,6 +31,7 @@ public class Player: MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         colliding = new List<GameObject>();
         initialSpeed = speed;
+        source = gameObject.GetComponent<AudioSource>();
         //PlayerPrefs.SetString("nextRun", "nextRun");
     }
 
@@ -59,20 +62,33 @@ public class Player: MonoBehaviour
         movement = movement.normalized * speed * Time.deltaTime;
         
         playerRigidbody.MovePosition(playerRigidbody.position + movement);
-
+        
+        if (h != 0 || v != 0)
+        {
+            if (!source.isPlaying)
+                source.Play();
+        }
+        else
+            source.Stop();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "enemy")
         {
-            SlowSpeed();
+            //SlowSpeed();
         }
         else
         {
             if (other.gameObject.tag == "detectedZone")
             {
                 other.gameObject.transform.parent.transform.Find("Graph").GetComponent<Animator>().SetBool("playerNearby", true);
+                BuryEntity bury = other.gameObject.transform.parent.GetComponent<BuryEntity>();
+                if (bury != null && bury.validatesQuest)
+                {
+                    bury.validatesQuest = false;
+                    ValidateQuest(bury.questName);
+                }
             }
             else
             {
@@ -88,7 +104,7 @@ public class Player: MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            IntialSpeed();
+            //IntialSpeed();
         }
         else
         {
@@ -195,6 +211,28 @@ public class Player: MonoBehaviour
                 break;
             default:
                 return;
+        }
+    }
+
+    void ValidateQuest (string name)
+    {
+        Debug.Log("validate quest " + name);
+        if (name == "hunt")
+        {
+            scarfNPC.NextDialog();
+        }
+    }
+
+    public void Trigger (string name)
+    {
+        Debug.Log("trigger " + name);
+        if (name == "hunt")
+        {
+            gnoupo.validatesQuest = true;
+        }
+        else if (name == "exit")
+        {
+            SceneManager.LoadScene(1);
         }
     }
 

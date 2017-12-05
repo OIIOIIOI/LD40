@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4529646441824742}
-  - component: {fileID: 114002110847788214}
   - component: {fileID: 212234561859101638}
+  - component: {fileID: 114002110847788214}
   m_Layer: 0
   m_Name: FakeNPC1
   m_TagString: Decor
@@ -60,6 +60,8 @@ MonoBehaviour:
   objectName: scarf
   dialogs:
   - loop: 1
+    chain: 0
+    trigger: 
     lines:
     - Hi friend!
     - You can move around and explore, but there is not much to do yet.
@@ -68,13 +70,37 @@ MonoBehaviour:
     - Could you find it for me?
     - Thanks!
   - loop: 0
+    chain: 1
+    trigger: 
     lines:
     - Thank you, you found it!
     - This is a precious scarf.
     - I have another request if you don't mind.
     - After that, I swear I'll tell you where the starship is.
-    - Wild Gnoupos are hiding in our fields.
+    - A group of wild blue Gnoupos has been spotted north of here.
     - Could you please make them run away?
+  - loop: 1
+    chain: 0
+    trigger: hunt
+    lines:
+    - Go ahead, take care of the Gnoupos!
+  - loop: 0
+    chain: 1
+    trigger: 
+    lines:
+    - It's not that easy to get rid of these creatures, heh?
+    - I was supposed to give you an item to help you but I don't have it.
+    - I'm afraid that's it for now...
+    - You can run around if you want, and when you want to leave, talk to me again.
+  - loop: 0
+    chain: 1
+    trigger: 
+    lines:
+    - Good bye!
+  - loop: 0
+    chain: 0
+    trigger: exit
+    lines: []
 --- !u!212 &212234561859101638
 SpriteRenderer:
   m_ObjectHideFlags: 1

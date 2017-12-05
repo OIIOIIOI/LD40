@@ -5,8 +5,10 @@ using UnityEngine;
 public class BuryEntity : MonoBehaviour {
 
     public int radius;
-    public GameObject player;
+    public bool validatesQuest = false;
+    public string questName;
 
+    GameObject player;
     GameObject detectedArea;
 
     void Awake()

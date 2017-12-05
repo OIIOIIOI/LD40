@@ -15,6 +15,7 @@ public class DialogInteractableEntity : InteractableEntity
     
     GameObject image;
     GameObject text;
+    Player player;
 
     new void Awake()
     {
@@ -23,7 +24,8 @@ public class DialogInteractableEntity : InteractableEntity
         canvasDialog = GameObject.Find("DialogueCanvas").GetComponent<Canvas>();
         image = canvasDialog.transform.Find("Image").gameObject;
         text = image.transform.Find("Text").gameObject;
-        
+        player = GameObject.Find("Player").GetComponent<Player>();
+
         HideDialog();
 
         currentDialog = 0;
@@ -37,6 +39,9 @@ public class DialogInteractableEntity : InteractableEntity
             return;
 
         currentDialog++;
+
+        if (dialogs[currentDialog].trigger != "" && player != null)
+            player.Trigger(dialogs[currentDialog].trigger);
 
         currentLine = -1;
         //NextLine();
@@ -104,5 +109,6 @@ public class Dialog
 {
     public bool loop = false;
     public bool chain = false;
+    public string trigger = "";
     public string[] lines;
 }
